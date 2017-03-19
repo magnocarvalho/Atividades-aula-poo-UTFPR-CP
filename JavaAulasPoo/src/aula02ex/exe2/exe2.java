@@ -5,8 +5,11 @@
  */
 package aula02ex.exe2;
 
+import java.util.Scanner;
+
 /**
- *
+ *2) Escreva uma aplicação Java que receba 15 valores, do usuário, armazene em um vetor e depois 
+ * apresente na tela a quantidade de valores pares.
  * @author magno
  */
 public class exe2 {
@@ -15,7 +18,19 @@ public class exe2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic here]
+        Scanner sc = new Scanner(System.in);
+        int a[] = new int[15];
+        for (int i = 0; i < 15; i++) {
+            a[i] = sc.nextInt();
+        }
+        System.out.println("Numeros pares:");
+        for (int i = 0; i < 15; i++) {
+            if(a[i]%2 == 0)
+            {
+                System.out.println((i+1)+ " = " + a[i] + ";" );
+            }
+        }
     }
     
 }
