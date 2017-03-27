@@ -10,6 +10,7 @@ public class Aluno {
 	private String nome;
 	private double nota[];
 	private double media;
+        private double frequencia;
 	
 	Aluno() {
 		System.out.println("Construtor 1");
@@ -90,7 +91,21 @@ public class Aluno {
     public double getMedia() {
 		return this.media;
 	}
-	
+
+    /**
+     * @return the frequencia
+     */
+    public double getFrequencia() {
+        return frequencia;
+    }
+
+    /**
+     * @param frequencia the frequencia to set
+     */
+    public void setFrequencia(double frequencia) {
+        this.frequencia = frequencia;
+    }
+    
    /**
     * b) Um método para imprimir 
     * todos os dados do aluno - RA, nome, suas 4 notas
@@ -98,6 +113,31 @@ public class Aluno {
     */
     public void imprimirNota(int ra)
     {
-        System.out.println("RA: "+ ra + ", Aluno: " + this.getNome() + "notas "+ this.getNota()[0] +" " + "notas "+ this.getNota()[1] +" " +"notas "+ this.getNota()[2] +" " +"notas "+ this.getNota()[4] +" Teve media: " + this.getMedia() );
+        ra = this.getRa();
+        System.out.println("RA: "+ ra + ", Aluno: " + this.getNome() + "notas "+ this.getNota()[0] +" " + "notas "+ this.getNota()[1] +" " +"notas "+ this.getNota()[2] +" " +"notas "+ this.getNota()[3] +" Teve media: " + this.getMedia() );
     }
+
+    /**
+     * c) Acrescente um atributo do tipo double na classe Aluno chamado frequência, 
+     * que deve ser uma escala de 0 a 100 (em percentual). Em seguida crie um método 
+     * de retorno booleano para verificar se o aluno foi aprovado ou reprovado. 
+     * Lembrando que para o aluno ser aprovado, sua média deve ser superior a 6.0 e sua 
+     * frequência acima de 75%.
+     * 
+     */
+    public boolean verificarFrequencia(double frequencia, double media )
+    {
+        frequencia = this.getFrequencia();
+        media = this.getMedia();
+        
+        if(frequencia > 75 && media > 6 )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
 }
