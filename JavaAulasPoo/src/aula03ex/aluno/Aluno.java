@@ -91,4 +91,13 @@ public class Aluno {
 		return this.media;
 	}
 	
+   /**
+    * b) Um método para imprimir 
+    * todos os dados do aluno - RA, nome, suas 4 notas
+    * e sua média final em uma única linha. 
+    */
+    public void imprimirNota(int ra)
+    {
+        System.out.println("RA: "+ ra + ", Aluno: " + this.getNome() + "notas "+ this.getNota()[0] +" " + "notas "+ this.getNota()[1] +" " +"notas "+ this.getNota()[2] +" " +"notas "+ this.getNota()[4] +" Teve media: " + this.getMedia() );
+    }
 }
