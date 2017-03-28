@@ -23,6 +23,25 @@ public class Conta {
     private String nomeTitula;
     private double saldo;
     
+    Conta(int numConta, String nome, double saldoInicial)
+    {
+        this.setNomeTitula(nome);
+        this.setNumero(numConta);
+        this.setSaldo(saldoInicial);
+    }
+    Conta(int id) //c) Incluir construtores sobrecarregados para construir os objetos personalizados e definir diferentes formas de inicialização.
+    {
+        this.setNumero(id);
+        this.setNomeTitula("Magno");
+        this.setSaldo(25000);
+    }
+    
+    /**
+     * a) O método sacar() deverá subtrair do saldo do cliente o 
+     * valor passado como argumento. Não existe saldo negativo. 
+     * Crie uma nova classe e teste a implementação da classe Conta.
+     * @param valor 
+     */
     public void sacar(double valor)
     {
         if(valor > this.getSaldo() || valor <= 0 )
@@ -34,12 +53,21 @@ public class Conta {
             this.setSaldo(this.getSaldo() - valor);
         }
     }
+    /**
+     * b) O Método depositar() acresce no saldo o valor passado como argumento. 
+     * @param valor 
+     */
     public void depositar(double valor)
     {
         if( valor > 0 )
         {
             this.setSaldo(this.getSaldo() + valor);
         }
+    }
+    public String tostring()
+    {
+        //D: O método toString serve para retornar uma String com os dados atuais da conta, em uma única linha (número - titular - saldo).
+        return ("Conta numero: " + getNumero()+ "\n Cliente: " + getNomeTitula() + "\nSaldo atual: " + getSaldo() + "\nConta pronta para deposito ou saque");
     }
     
     /**
