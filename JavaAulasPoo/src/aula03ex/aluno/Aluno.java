@@ -36,7 +36,34 @@ public class Aluno {
 		}
                 this.setMedia(soma/this.getNota().length);
 	}
-	
+    public String imprimirNota(int ra)
+    {
+        ra = this.getRa();
+        return("RA: "+ ra + "\nAluno: " + this.getNome() + "\nNotas "+ this.getNota()[0] +" " + "notas "+ this.getNota()[1] +" " +"notas "+ this.getNota()[2] +" " +"notas "+ this.getNota()[3] +" Teve media: " + this.getMedia() );
+    }
+
+    /**
+     * c) Acrescente um atributo do tipo double na classe Aluno chamado frequência, 
+     * que deve ser uma escala de 0 a 100 (em percentual). Em seguida crie um método 
+     * de retorno booleano para verificar se o aluno foi aprovado ou reprovado. 
+     * Lembrando que para o aluno ser aprovado, sua média deve ser superior a 6.0 e sua 
+     * frequência acima de 75%.
+     * 
+     */
+    public boolean verificarFrequencia(double frequencia, double media )
+    {
+        frequencia = this.getFrequencia();
+        media = this.getMedia();
+        
+        if(frequencia > 75 && media > 6 )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 		
 
     /**
@@ -111,33 +138,6 @@ public class Aluno {
     * todos os dados do aluno - RA, nome, suas 4 notas
     * e sua média final em uma única linha. 
     */
-    public void imprimirNota(int ra)
-    {
-        ra = this.getRa();
-        System.out.println("RA: "+ ra + ", Aluno: " + this.getNome() + "notas "+ this.getNota()[0] +" " + "notas "+ this.getNota()[1] +" " +"notas "+ this.getNota()[2] +" " +"notas "+ this.getNota()[3] +" Teve media: " + this.getMedia() );
-    }
-
-    /**
-     * c) Acrescente um atributo do tipo double na classe Aluno chamado frequência, 
-     * que deve ser uma escala de 0 a 100 (em percentual). Em seguida crie um método 
-     * de retorno booleano para verificar se o aluno foi aprovado ou reprovado. 
-     * Lembrando que para o aluno ser aprovado, sua média deve ser superior a 6.0 e sua 
-     * frequência acima de 75%.
-     * 
-     */
-    public boolean verificarFrequencia(double frequencia, double media )
-    {
-        frequencia = this.getFrequencia();
-        media = this.getMedia();
-        
-        if(frequencia > 75 && media > 6 )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    
     
 }

@@ -30,10 +30,11 @@ public class Main {
 
         int a = 0;
         
-        
+        // do while utilizado para manipular diversas vezes o metodo; 
         do{
-            System.out.println("Conta numero: " + c.getNumero() + "\n Cliente: " + c.getNomeTitula() + "\nSaldo atual: " + c.getSaldo() + "\nConta pronta para deposito ou saque");
-            System.out.println("\nPara depositos digite 1\nSacar digite 2\nexit 0\n");
+            String tostring = c.tostring();
+            System.out.println(tostring); //D: O método toString serve para retornar uma String com os dados atuais da conta, em uma única linha (número - titular - saldo).
+            System.out.println("\nPara depositos digite 1\nSacar digite 2\nPara conta 666 - digite 3\nexit 0\n");
             a = sc.nextInt();
             switch (a)
             {
@@ -51,6 +52,8 @@ public class Main {
                     c.sacar(saque);
                     System.out.println("saque realizado com sucesso:\n");
                     break;
+                case 3:
+                    c = new Conta(666);
                 default:
                     System.out.println("Opção invalida\n");
             }
