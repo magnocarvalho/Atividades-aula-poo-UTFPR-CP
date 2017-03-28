@@ -17,30 +17,44 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Conta c = new Conta();
+       
         Scanner sc = new Scanner(System.in);
+        Scanner stringN = new Scanner(System.in); //scanner a mais foi necessario por causa de erro dentro do java caso de duvida retire esse scanner e untilize apenas o sc que vai da um bug na leitura do nextline:
+        System.out.println("Digite numero da conta");
+        int id = sc.nextInt();
+        System.out.println("Digite saldo inicial");
+        double inicial = sc.nextDouble();
+        System.out.println("Digite nome do cliente");
+        String nome = stringN.nextLine();
+        Conta c = new Conta(id, nome, inicial);
+
         int a = 0;
         
+        
         do{
-            System.out.println("Para depositos digite 1\n\n\nSacar digite 2\n\n\nexit 0\n");
+            System.out.println("Conta numero: " + c.getNumero() + "\n Cliente: " + c.getNomeTitula() + "\nSaldo atual: " + c.getSaldo() + "\nConta pronta para deposito ou saque");
+            System.out.println("\nPara depositos digite 1\nSacar digite 2\nexit 0\n");
             a = sc.nextInt();
             switch (a)
             {
                 case 1:
+                    System.out.println("Deposito para Conta numero: " + c.getNumero() + "\nCliente: " + c.getNomeTitula() + "\nSaldo atual: " + c.getSaldo());
                     System.out.println("digite o valor para deposito valido:");
                     double aux = sc.nextDouble();
                     c.depositar(aux);
                     System.out.println("Deposito realizado com sucesso:");
                     break;
                 case 2:
+                    System.out.println("Saque para Conta numero: " + c.getNumero() + "\nCliente: " + c.getNomeTitula() + "\nSaldo atual: " + c.getSaldo());
                     System.out.println("digite o valor para saque valido:");
                     double saque = sc.nextDouble();
                     c.sacar(saque);
-                    System.out.println("saque realizado com sucesso:");
+                    System.out.println("saque realizado com sucesso:\n");
                     break;
+                default:
+                    System.out.println("Opção invalida\n");
             }
-        }while(a == 0); 
+        }while(a != 0); 
       
     }
     
