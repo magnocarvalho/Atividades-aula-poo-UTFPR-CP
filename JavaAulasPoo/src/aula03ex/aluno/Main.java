@@ -24,6 +24,10 @@ public class Main {
         Aluno aluno = new Aluno();
         System.out.println("Digite o RA do aluno ");
         aluno.setRa(sc.nextInt());
+        System.out.println("digite nome do aluno");
+        aluno.setNome(sc.nextLine());
+        System.out.println("Digite as 4 notas do aluno apenas numeros depois ENTER");
+        aluno.atribuiNota(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
                 
         do{
             
@@ -31,16 +35,31 @@ public class Main {
             System.out.println(" 2 - verificar se o aluno foi aprovado ou reprovado");
             System.out.println(" 3 - atribuir notas ao aluno");
             System.out.println(" 0 - sair ");
-                  
+            a = sc.nextInt();
             switch (a)
             {
                 
                 case 1:
                   aluno.imprimirNota(aluno.getRa());
-                    
-                        
+                  break;
+                 
+                case  2:
+                   aluno.verificarFrequencia(aluno.getFrequencia(), aluno.getMedia());
+                   break;
+                case 3:
+                   aluno.atribuiNota(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt()); 
+                   break;
+                default:
+                    a = 0;
             }
-        }while(true);
+            if(a == 1 || a == 2 || a == 3)
+            {
+                
+            }else
+            {
+                a = 0;
+            }
+        }while(a == 0);
         
     }
     
