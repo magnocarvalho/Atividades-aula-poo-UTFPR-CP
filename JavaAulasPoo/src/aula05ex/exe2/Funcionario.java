@@ -25,10 +25,14 @@ public class Funcionario extends Pessoa{
         
     public double salarioFinal()
     {
-        double retorno = 0;
-        
-        
-        
+        /**
+         * Para a classe Funcionario herdado de Pessoa, implemente um construtor
+         que inicialize seus atributos (salario base, empresa e vendas), al ´ em dos ´
+         atributos da sua classe base. Implemente os getters. O metodo salarioFi- ´
+         nal() deve calcular o salario base multiplicado pelo n ´ umero de vendas.
+         */
+        double retorno = getBase() * getVendas();
+               
         return retorno;
     }
     
