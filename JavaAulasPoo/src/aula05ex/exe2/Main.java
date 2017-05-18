@@ -5,6 +5,7 @@
  */
 package aula05ex.exe2;
 
+
 /**
  *
  * @author magno
@@ -18,7 +19,7 @@ public class Main {
         // TODO code application logic here
         
         System.out.println("");
-        
+
         
     }
     
